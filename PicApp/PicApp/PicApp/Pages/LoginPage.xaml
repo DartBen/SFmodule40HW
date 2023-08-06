@@ -3,10 +3,58 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PicApp.Pages.LoginPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="0.1*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Label x:Name="lblPwd"
+                   FontSize="Title"
+                   Text="Введите PIN-код для регистации:"
+                   Grid.Row="0"
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Fill" 
+                   VerticalOptions="Center"
+                />
+                <Entry IsPassword="True" 
+                   x:Name="Password" 
+                   MaxLength="4"
+                   TextColor="Black" 
+                   Placeholder="PIN"
+                   HorizontalOptions="Fill" 
+                   VerticalOptions="Center"
+                   Grid.Row="1"
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="2" 
+                   TextChanged="Password_TextChanged"/>
+
+                <Label x:Name="lblInfoMsg"
+                   FontSize="Small"
+                   TextColor="Red"
+                   VerticalTextAlignment="Center" 
+                   HorizontalTextAlignment="Center"
+                   Grid.Row="2"
+                   Grid.Column="0" 
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Fill" 
+                   VerticalOptions="Center"
+                />
+                <Button x:Name="endPwdButton" 
+                    IsEnabled="false"
+                    Text="Войти" 
+                    Clicked="endPwdButton_Click"
+                    Grid.Row="3"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="2"/>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
