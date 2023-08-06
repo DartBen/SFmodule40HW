@@ -12,47 +12,47 @@ namespace PicApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
-        private string _pwd;
+        private string _password;
         public LoginPage()
         {
             InitializeComponent();
-            _pwd = Preferences.Get("Pwd", String.Empty);
-            if (_pwd != string.Empty)
+            _password = Preferences.Get("Password", String.Empty);
+            if (_password != string.Empty)
             {
-                lblPwd.Text = "Введите пин-код для входа:";
+                lPin.Text = "Введите пин-код для входа:";
             }
         }
 
         private void endPwdButton_Click(object sender, EventArgs e)
         {
             string enterPwd = Password.Text;
-            if (_pwd == string.Empty)
+            if (_password == string.Empty)
             {
-                Preferences.Set("Pwd", enterPwd);
+                Preferences.Set("Password", enterPwd);
             }
             else
             {
-                if (_pwd != Password.Text)
+                if (_password != Password.Text)
                 {
-                    lblInfoMsg.Text = "Неверный ПИН-код";
+                    lInfoMsg.Text = "Неверный ПИН-код";
                     return;
                 }
             }
 
-            Navigation.PushAsync(new DummyPage());
+            Navigation.PushAsync(new GalleryPage());
         }
 
         private void Password_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (Password.Text.Length != 4)
             {
-                lblInfoMsg.Text = "ПИН-код должен состоять из 4 символов";
+                lInfoMsg.Text = "ПИН-код должен состоять из 4 символов";
                 endPwdButton.IsEnabled = false;
             }
             else
             {
                 endPwdButton.IsEnabled = true;
-                lblInfoMsg.Text = string.Empty;
+                lInfoMsg.Text = string.Empty;
             }
         }
     }

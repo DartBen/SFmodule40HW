@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PicApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,10 @@ namespace PicApp.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PhotoPage : ContentPage
     {
-        public PhotoPage()
+        public PhotoPage(PictureInfo pictureInfo)
         {
             InitializeComponent();
+            this.BindingContext = pictureInfo;
         }
     }
 }
