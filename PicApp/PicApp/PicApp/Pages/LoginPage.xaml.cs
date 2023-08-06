@@ -23,7 +23,6 @@ namespace PicApp.Pages
             }
         }
 
-
         private void endPwdButton_Click(object sender, EventArgs e)
         {
             string enterPwd = Password.Text;

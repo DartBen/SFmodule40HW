@@ -23,10 +23,12 @@
                    Grid.ColumnSpan="2"
                    HorizontalOptions="Fill" 
                    VerticalOptions="Center"
+                   Padding="20,0"
                 />
                 <Entry IsPassword="True" 
                    x:Name="Password" 
                    MaxLength="4"
+                   Margin ="20"
                    TextColor="Black" 
                    Placeholder="PIN"
                    HorizontalOptions="Fill" 
@@ -35,7 +37,6 @@
                    Grid.Column="0" 
                    Grid.ColumnSpan="2" 
                    TextChanged="Password_TextChanged"/>
-
                 <Label x:Name="lblInfoMsg"
                    FontSize="Small"
                    TextColor="Red"
@@ -46,14 +47,15 @@
                    Grid.ColumnSpan="2"
                    HorizontalOptions="Fill" 
                    VerticalOptions="Center"
-                />
+                   Padding="20,0"/>
                 <Button x:Name="endPwdButton" 
                     IsEnabled="false"
                     Text="Войти" 
                     Clicked="endPwdButton_Click"
                     Grid.Row="3"
                     Grid.Column="0"
-                    Grid.ColumnSpan="2"/>
+                    Grid.ColumnSpan="2"
+                    Padding="20,0"/>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
